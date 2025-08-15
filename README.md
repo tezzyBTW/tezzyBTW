@@ -29,7 +29,7 @@
 
 ### About Me
 - Working on **Recon** & custom game projects  
-- Learning **C++, C#, WPF, .NET**  
+- Learning **C++, C#**  
 - Always improving my coding & UI design skills  
 - Loves modding & reverse engineering game systems  
 
