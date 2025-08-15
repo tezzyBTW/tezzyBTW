@@ -11,15 +11,15 @@
 
 ---
 
-### 🚀 About Me
-- 💻 Working on **Recon Launcher** & custom game projects  
-- 🌱 Learning **C++, C#, WPF, .NET**  
-- 🎯 Always improving my coding & UI design skills  
-- 🎮 Loves modding & reverse engineering game systems  
+### About Me
+- Working on **Recon Launcher** & custom game projects  
+- Learning **C++, C#, WPF, .NET**  
+- Always improving my coding & UI design skills  
+- Loves modding & reverse engineering game systems  
 
 ---
 
-### 📊 GitHub Stats
+### GitHub Stats
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=tezzyBTW&show_icons=true&theme=tokyonight&hide_border=true" alt="Tezzy's GitHub stats" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=tezzyBTW&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
