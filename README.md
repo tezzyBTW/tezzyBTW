@@ -1,27 +1,24 @@
 <h1 align="center">Hey there, I'm Tezzy 👋</h1>
 
 <p align="center">
-  <!-- Profile Views -->
-  <img src="https://komarev.com/ghpvc/?username=tezzyBTW&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
-
-  <!-- Discord -->
-  <a href="https://discord.gg/p67BF77yr5">
-    <img src="https://img.shields.io/discord/1222654332931936378?color=5865F2&label=Discord&logo=discord&logoColor=white&style=for-the-badge" alt="Discord" />
+  <!-- Discord (Live Status) -->
+  <a href="https://discord.com/users/732275651385753753">
+    <img src="https://lanyard.cnrad.dev/api/732275651385753753?bg=23272A&borderRadius=5px" alt="Discord Status" />
   </a>
 
   <!-- YouTube -->
   <a href="https://www.youtube.com/@TezzyFRAGZ">
-    <img src="https://img.shields.io/youtube/channel/subscribers/UCtX-Wox6Jad7J4s2g05J13Q?style=for-the-badge&logo=youtube&logoColor=white&label=YouTube&color=FF0000" alt="YouTube" />
+    <img src="https://img.shields.io/badge/-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
   </a>
 
   <!-- Twitch -->
   <a href="https://www.twitch.tv/itstezzybtw">
-    <img src="https://img.shields.io/twitch/status/itstezzybtw?style=for-the-badge&logo=twitch&logoColor=white&label=Twitch&color=9146FF" alt="Twitch" />
+    <img src="https://img.shields.io/badge/-Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white" alt="Twitch" />
   </a>
 
   <!-- GitHub -->
   <a href="https://github.com/tezzyBTW">
-    <img src="https://img.shields.io/badge/GitHub-tezzyBTW-181717?style=for-the-badge&logo=github" alt="GitHub" />
+    <img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
 </p>
 
@@ -44,6 +41,11 @@
 ---
 
 ### 🟢 Discord Status (Live)
-> This updates with your Discord RPC automatically  
-
 [![Discord Presence](https://lanyard.cnrad.dev/api/732275651385753753)](https://discord.com/users/732275651385753753)
+
+---
+
+<p align="center">
+  <!-- Profile Views -->
+  <img src="https://komarev.com/ghpvc/?username=tezzyBTW&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
+</p>
