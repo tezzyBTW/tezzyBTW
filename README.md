@@ -1,12 +1,12 @@
 <h1 align="center">Hi, Im Tezzy</h1>
 
 <p align="center">
-  <!-- Discord Profile -->
+  <!-- Discord -->
   <a href="https://discord.com/users/732275651385753753">
     <img src="https://img.shields.io/badge/Discord%20Profile-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
   </a>
 
-  <!-- Project Discord -->
+  <!-- Recon -->
   <a href="https://discord.gg/p67BF77yr5">
     <img src="https://img.shields.io/badge/Project%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Recon" />
   </a>
