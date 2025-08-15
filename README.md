@@ -40,9 +40,6 @@
 
 ---
 
-### 🟢 Discord Status (Live)
-[![Discord Presence](https://lanyard.cnrad.dev/api/732275651385753753)](https://discord.com/users/732275651385753753)
-
 ---
 
 <p align="center">
