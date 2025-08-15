@@ -4,8 +4,8 @@
   <a href="https://discord.gg/p67BF77yr5">
     <img src="https://img.shields.io/discord/1222654332931936378?color=5865F2&label=Discord&logo=discord&logoColor=white&style=for-the-badge" alt="Discord" />
   </a>
-  <a href="http://www.youtube.com/@TezzyFRAGZ"><img src="https://skillicons.dev/icons?i=html,css,js" height="40" alt="Website"/></a>
-  <a href="https://www.twitch.tv/itstezzybtw"><img src="https://skillicons.dev/icons?i=html,css,js" height="40" alt="Website"/></a>
+  <a href="http://www.youtube.com/@TezzyFRAGZ"><img src="https://www.youtube.com/" height="40" alt="Website"/></a>
+  <a href="https://www.twitch.tv/itstezzybtw"><img src="https://www.twitch.tv/" height="40" alt="Website"/></a>
   <a href="https://github.com/tezzyBTW">
     <img src="https://img.shields.io/badge/GitHub-tezzyBTW-181717?style=for-the-badge&logo=github" alt="GitHub" />
   </a>
