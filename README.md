@@ -3,7 +3,7 @@
 <p align="center">
   <!-- Discord Profile Card -->
 <a href="https://discord.com/users/732275651385753753">
-  <img src="https://discord.c99.nl/widget/theme-4/732275651385753753.png" alt="Discord Profile" />
+  <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
 </a>
 
   <!-- YouTube -->
