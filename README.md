@@ -28,7 +28,11 @@
 - Working on **Recon** & custom game projects  
 - Learning 
   <img src="https://img.shields.io/badge/-C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++ Logo" height="24" /> 
-  <img src="https://img.shields.io/badge/-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C# Logo" height="24" />  
+  <img src="https://img.shields.io/badge/-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C# Logo" height="24" />
+  <img src="https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Logo" height="24" />
+  <img src="https://img.shields.io/badge/-Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust Logo" height="24" />
+  <img src="https://img.shields.io/badge/-Tauri-5C7AEA?style=for-the-badge&logo=tauri&logoColor=white" alt="Tauri Logo" height="24" />
+  <img src="https://img.shields.io/badge/-Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white" alt="Lua Logo" height="24" />  
 - Always improving my coding & UI design skills  
 - Loves modding & reverse engineering game systems  
 
