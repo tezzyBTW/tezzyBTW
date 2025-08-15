@@ -2,11 +2,9 @@
 
 <p align="center">
   <!-- Discord Profile Card -->
-<div align="center">
   <a href="https://discord.com/users/732275651385753753">
   <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
 </a>
-</div>
 
   <!-- YouTube -->
   <a href="https://www.youtube.com/@TezzyFRAGZ">
