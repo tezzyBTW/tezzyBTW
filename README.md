@@ -14,7 +14,7 @@
 ---
 
 ### About Me
-- Working on **Recon Launcher** & custom game projects  
+- Working on **Recon** & custom game projects  
 - Learning **C++, C#, WPF, .NET**  
 - Always improving my coding & UI design skills  
 - Loves modding & reverse engineering game systems  
