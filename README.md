@@ -1,10 +1,10 @@
-<h1 align="center">Hey there, I'm Tezzy 👋</h1>
+<h1 align="center">Hi, I'm Tezzy 👋</h1>
 
 <p align="center">
-  <!-- Discord (Live Status) -->
-  <a href="https://discord.com/users/732275651385753753">
-    <img src="https://lanyard.cnrad.dev/api/732275651385753753?bg=23272A&borderRadius=5px" alt="Discord Status" />
-  </a>
+  <!-- Discord Profile Card -->
+<a href="https://discord.com/users/732275651385753753">
+  <img src="https://discord.c99.nl/widget/theme-4/732275651385753753.png" alt="Discord Profile" />
+</a>
 
   <!-- YouTube -->
   <a href="https://www.youtube.com/@TezzyFRAGZ">
