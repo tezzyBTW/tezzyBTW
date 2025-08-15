@@ -1,4 +1,4 @@
-<h1 align="center">Hi, I'm Tezzy 👋</h1>
+<h1 align="center">Hi, Im Tezzy</h1>
 
 <p align="center">
   <!-- Discord Profile Card -->
