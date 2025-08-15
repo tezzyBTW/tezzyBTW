@@ -26,7 +26,9 @@
 
 ### About Me
 - Working on **Recon** & custom game projects  
-- Learning **C++, C#**  
+- Learning 
+  <img src="https://img.shields.io/badge/-C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++ Logo" height="24" /> 
+  <img src="https://img.shields.io/badge/-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C# Logo" height="24" />  
 - Always improving my coding & UI design skills  
 - Loves modding & reverse engineering game systems  
 
