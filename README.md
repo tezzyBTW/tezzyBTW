@@ -4,8 +4,8 @@
   <!-- Discord Profile Card -->
 <div align="center">
   <a href="https://discord.com/users/732275651385753753">
-    <img src="https://lanyard.cnrad.dev/api/732275651385753753?theme=dark&hideStatus=true" alt="Discord Presence" style="display: block; margin: auto;">
-  </a>
+  <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
+</a>
 </div>
 
   <!-- YouTube -->
@@ -34,7 +34,7 @@
 
 ---
 
-### 📊 GitHub Stats
+### GitHub Stats
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=tezzyBTW&show_icons=true&theme=tokyonight&hide_border=true" alt="Tezzy's GitHub stats" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=tezzyBTW&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
