@@ -41,7 +41,6 @@
 ### GitHub Stats
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=tezzyBTW&show_icons=true&theme=tokyonight&hide_border=true" alt="Tezzy's GitHub stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tezzyBTW&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 </p>
 
 ---
