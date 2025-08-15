@@ -21,12 +21,6 @@
     <img src="https://img.shields.io/badge/-Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white" alt="Twitch" />
   </a>
 
-  <!-- GitHub -->
-  <a href="https://github.com/tezzyBTW">
-    <img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-</p>
-
 ---
 
 ### About Me
