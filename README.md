@@ -31,7 +31,6 @@
   <img src="https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Logo" height="24" />
   <img src="https://img.shields.io/badge/-Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust Logo" height="24" />
   <img src="https://img.shields.io/badge/-Tauri-5C7AEA?style=for-the-badge&logo=tauri&logoColor=white" alt="Tauri Logo" height="24" />
-  <img src="https://img.shields.io/badge/-Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white" alt="Lua Logo" height="24" />  
 - Always improving my coding & UI design skills   
 
 ---
