@@ -13,7 +13,7 @@
 
   <!-- Solar Discord Server -->
   <a href="https://discord.gg/solarr">
-    <img src="https://img.shields.io/badge/Recon-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Solar Discord Server" />
+    <img src="https://img.shields.io/badge/Solar-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Solar Discord Server" />
   </a>
 
   <!-- YouTube -->
