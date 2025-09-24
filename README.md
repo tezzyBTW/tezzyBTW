@@ -11,6 +11,11 @@
     <img src="https://img.shields.io/badge/Recon-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Recon Discord Server" />
   </a>
 
+  <!-- Solar Discord Server -->
+  <a href="https://discord.gg/solarr">
+    <img src="https://img.shields.io/badge/Recon-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Solar Discord Server" />
+  </a>
+
   <!-- YouTube -->
   <a href="https://www.youtube.com/@TezzyFRAGZ">
     <img src="https://img.shields.io/badge/-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
@@ -24,7 +29,7 @@
 ---
 
 ### About Me
-- Working on **Recon** & custom game projects  
+- Working on custom fortnite game projects  
 - Learning 
   <img src="https://img.shields.io/badge/-C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++ Logo" height="24" /> 
   <img src="https://img.shields.io/badge/-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C# Logo" height="24" />
