@@ -35,7 +35,7 @@
   <img src="https://img.shields.io/badge/-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C# Logo" height="24" />
   <img src="https://img.shields.io/badge/-Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust Logo" height="24" />
   <img src="https://img.shields.io/badge/-Tauri-5C7AEA?style=for-the-badge&logo=tauri&logoColor=white" alt="Tauri Logo" height="24" />
-  <img src="https://img.shields.io/badge/-JavaScript-5C7AEA?style=for-the-badge&logo=tauri&logoColor=white" alt="Js Logo" height="24" />
+  <img src="https://img.shields.io/badge/-JavaScript-f5de49?style=for-the-badge&logo=tauri&logoColor=white" alt="Js Logo" height="24" />
 - Always improving my coding & UI design skills   
 
 ---
