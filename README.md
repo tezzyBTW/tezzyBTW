@@ -39,6 +39,5 @@
 ---
 
 <p align="center">
-  <!-- Profile Views -->
   <img src="https://komarev.com/ghpvc/?username=tezzyBTW&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
 </p>
