@@ -28,6 +28,11 @@
 
 ---
 
+### Github Stats
+https://github-readme-stats.vercel.app/api?username=tezzyBTW&show_icons=true&count_private=true&theme=tokyonight
+
+---
+
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=tezzyBTW&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
 </p>
