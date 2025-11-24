@@ -28,8 +28,7 @@
 
 ---
 
-![Github Stats]
-(https://github-readme-stats.vercel.app/api?username=tezzyBTW&show_icons=true&count_private=true&theme=tokyonight)
+![Github Stats](https://github-readme-stats.vercel.app/api?username=tezzyBTW&show_icons=true&count_private=true&theme=tokyonight)
 
 ---
 
