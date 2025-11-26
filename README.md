@@ -2,20 +2,6 @@
 
 <p align="center">
 
-  <a href="https://discord.gg/YdtDGFKBg9">
-    <img src="https://img.shields.io/badge/Solar-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Reborn Discord Server" />
-  </a>
-
-  <a href="https://www.youtube.com/@TezzyFRAGZ">
-    <img src="https://img.shields.io/badge/-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
-  </a>
-
-  <a href="https://www.twitch.tv/itstezzybtw">
-    <img src="https://img.shields.io/badge/-Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white" alt="Twitch" />
-  </a>
-
----
-
 ### About Me
 > - Founder of Recon | .gg/p67BF77yr5
 > - Founder of Solar | .gg/YdtDGFKBg9
