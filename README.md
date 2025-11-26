@@ -14,6 +14,10 @@
 
 ---
 
+-  I mod custom skins / emotes for 9.10 and 14.30
+
+---
+
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=tezzyBTW&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
 </p>
