@@ -14,7 +14,7 @@
 
 ---
 
--  I mod custom skins / emotes for 9.10 and 14.30
+> -  I mod custom skins / emotes for 9.10 and 14.30
 
 ---
 
