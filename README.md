@@ -4,7 +4,7 @@
 
 ### About Me
 > - Founder of Recon | .gg/p67BF77yr5
-> - Founder of Solar | .gg/YdtDGFKBg9
+> - Founder of Revive | .gg/p2aPJKEYNd
 > - I mod custom skins / emotes for 9.10 and 14.30
 > - I make backends and gameservers
 -  
