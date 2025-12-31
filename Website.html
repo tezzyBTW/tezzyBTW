@@ -1,0 +1,988 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tezzy</title>
+    <meta name="description" content="Tezzy">
+    <meta name="keywords" content="Tezzy, Developer, Portfolio, Music">
+    <meta name="author" content="Tezzy">
+
+    <meta property="og:title" content="Tezzy">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="https://doxxed.cc/">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background: #0d1117;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 25% 25%, #8b5cf620 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #3b82f615 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.02;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/></filter></defs><rect width="100%" height="100%" filter="url(%23noise)"/></svg>') repeat;
+            z-index: -1;
+        }
+
+        .splash {
+            position: fixed;
+            inset: 0;
+            background: #0d1117;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.6s ease;
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .splash.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #e6edf3;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .logo:hover {
+            color: #8b5cf6;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #8b5cf6;
+            transition: width 0.3s ease;
+        }
+
+        .logo:hover::after {
+            width: 100%;
+        }
+
+        .main {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.8s ease;
+        }
+
+        .main.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(22, 27, 34, 0.8);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(16px);
+            transform-style: preserve-3d;
+            transition: transform 0.05s ease-out, box-shadow 0.15s ease-out, border-color 0.3s ease;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+            will-change: transform;
+            position: relative;
+        }
+
+        .view-counter {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: #8b5cf6;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar-section {
+            position: relative;
+            margin-right: 16px;
+        }
+
+        .avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 2px solid #30363d;
+            overflow: hidden;
+            background: #21262d;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .status {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid #0d1117;
+            background: #238636;
+        }
+
+        .status.offline { background: #6e7681; }
+        .status.idle { background: #f85149; }
+        .status.dnd { background: #da3633; }
+
+        .info h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e6edf3;
+            margin-bottom: 2px;
+        }
+
+        .tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: #7d8590;
+        }
+
+        .activity {
+            background: rgba(33, 38, 45, 0.5);
+            border: 1px solid #21262d;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .activity-header {
+            display: flex;
+            align-items: center;
+            justify-content: between;
+        }
+
+        .activity-info {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .activity-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            margin-right: 12px;
+            overflow: hidden;
+        }
+
+        .activity-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .activity-text {
+            flex: 1;
+        }
+
+        .activity-name {
+            font-weight: 600;
+            color: #e6edf3;
+            font-size: 0.875rem;
+            margin-bottom: 2px;
+        }
+
+        .activity-details {
+            color: #8b5cf6;
+            font-size: 0.8rem;
+            margin-bottom: 1px;
+        }
+
+        .activity-state {
+            color: #7d8590;
+            font-size: 0.75rem;
+            margin-bottom: 1px;
+        }
+
+        .activity-time {
+            color: #6e7681;
+            font-size: 0.7rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .activity-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b5cf6;
+            font-size: 0.875rem;
+        }
+
+        .activity-icon.spotify {
+            background: rgba(30, 215, 96, 0.1);
+            border-color: rgba(30, 215, 96, 0.2);
+            color: #1ed760;
+        }
+
+        .activity-icon.vscode {
+            background: rgba(0, 122, 204, 0.1);
+            border-color: rgba(0, 122, 204, 0.2);
+            color: #007acc;
+        }
+
+        .spinner {
+            width: 10px;
+            height: 10px;
+            border: 2px solid #30363d;
+            border-left-color: #8b5cf6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid #21262d;
+            font-size: 0.8rem;
+            color: #6e7681;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        .views {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #8b5cf6;
+            display: none;
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .control {
+            background: rgba(22, 27, 34, 0.9);
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(16px);
+        }
+
+        .control button {
+            background: none;
+            border: none;
+            color: #e6edf3;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+
+        .control button:hover {
+            background: rgba(48, 54, 61, 0.5);
+        }
+
+        .volume {
+            -webkit-appearance: none;
+            width: 80px;
+            height: 4px;
+            background: #30363d;
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .volume::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .volume::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .links {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .link {
+            width: 40px;
+            height: 40px;
+            background: rgba(22, 27, 34, 0.9);
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e6edf3;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(16px);
+        }
+
+        .link:hover {
+            background: rgba(48, 54, 61, 0.8);
+            border-color: #8b5cf6;
+            color: #8b5cf6;
+            transform: translateY(-1px);
+        }
+
+        .typing::after {
+            content: "";
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: #e6edf3;
+            margin-left: 4px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        @media (max-width: 640px) {
+            .main {
+                padding: 1rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .controls {
+                top: 16px;
+                right: 16px;
+            }
+            
+            .links {
+                bottom: 16px;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    <div class="noise"></div>
+
+    <div class="splash" id="splash">
+        <div class="logo" id="logo">enter</div>
+    </div>
+
+    <div class="main" id="main">
+        <div class="container" id="container">
+            <div class="view-counter" id="viewCounter">0 views</div>
+            
+            <div class="header">
+                <div class="avatar-section">
+                    <div class="avatar">
+                        <img src="https://cdn.discordapp.com/avatars/732275651385753753/2d2ea4bbc73e20b6b780551bf1c5d0ec.webp?size=1024" alt="Tezzy">
+                    </div>
+                    <div class="status" id="status"></div>
+                </div>
+                <div class="info">
+                    <h1 id="username"></h1>
+                    <div class="tagline" id="tagline"></div>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="activity-header">
+                    <div class="activity-info">
+                        <div class="activity-avatar">
+                            <img src="https://cdn.discordapp.com/avatars/732275651385753753/2d2ea4bbc73e20b6b780551bf1c5d0ec.webp?size=1024" alt="activity">
+                        </div>
+                        <div class="activity-text">
+                            <div class="activity-name">Tezzy</div>
+                            <div class="activity-details" id="activityDetails">
+                                <span class="spinner"></span> checking status...
+                            </div>
+                            <div class="activity-state" id="activityState"></div>
+                            <div class="activity-time" id="activityTime"></div>
+                        </div>
+                    </div>
+                    <div class="activity-icon" id="activityIcon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="location">
+                    <span></span>
+                </div>
+                <div class="time" id="currentTime"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="control">
+            <button id="playBtn">
+                <i class="fas fa-play"></i>
+            </button>
+            <input type="range" class="volume" id="volumeSlider" min="0" max="1" step="0.01" value="0.3">
+        </div>
+    </div>
+
+    <div class="links">
+        <a href="https://twitch.tv/itstezzybtw" target="_blank" class="link">
+            <i class="fab fa-twitch"></i>
+        </a>
+        <a href="https://instagram.com/tezzybtw" target="_blank" class="link">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://discord.gg/p2aPJKEYNd" target="_blank" class="link">
+            <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://youtube.com/@TezzyFRAGZ" target="_blank" class="link">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.tiktok.com/@tezzy.btw" target="_blank" class="link">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://discordapp.com/users/732275651385753753" target="_blank" class="link">
+            <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://discord.gg/YqDeFR4Wze" target="_blank" class="link">
+            <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://github.com/tezzyBTW" target="_blank" class="link">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+
+    <audio id="audio">
+        <source src="" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const USER_ID = '732275651385753753';
+
+        const $ = id => document.getElementById(id);
+        const splash = $('splash');
+        const logo = $('logo');
+        const main = $('main');
+        const container = $('container');
+        const username = $('username');
+        const tagline = $('tagline');
+        const status = $('status');
+        const activityDetails = $('activityDetails');
+        const activityState = $('activityState');
+        const activityTime = $('activityTime');
+        const activityIcon = $('activityIcon');
+        const playBtn = $('playBtn');
+        const volumeSlider = $('volumeSlider');
+        const audio = $('audio');
+        const currentTime = $('currentTime');
+        const viewCounter = $('viewCounter');
+
+        let playing = false;
+        let startTime = null;
+        let currentTrackIndex = 0;
+        let shuffle = true;
+        let shuffleOrder = [];
+
+        async function incrementViews() {
+            try {
+                const response = await fetch('/tezzy/views/increment', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    updateViewCounter(data.views);
+                }
+            } catch (error) {
+                console.error('Failed to increment views:', error);
+            }
+        }
+
+        async function getViews() {
+            try {
+                const response = await fetch('/tezzy/views');
+                if (response.ok) {
+                    const data = await response.json();
+                    updateViewCounter(data.views);
+                }
+            } catch (error) {
+                console.error('Failed to get views:', error);
+            }
+        }
+
+        function updateViewCounter(views) {
+            const formatted = views.toLocaleString();
+            viewCounter.textContent = `${formatted} views`;
+        }
+
+        const playlist = [
+            "https://public.doxxed.cc/Lil%20Baby%20-%20%20By%20Myself%20Feat%20Rod%20Wave%20%26%20Rylo%20Rodriguez%20(Official%20Music%20Video).mp3",
+            "https://public.doxxed.cc/Lil%20Baby%20-%20In%20A%20Minute%20(Official%20Video).mp3",
+            "https://public.doxxed.cc/Lil%20Baby%20-%20Sum%202%20Prove%20(Official%20Video).mp3",
+        ];
+
+        function createShuffleOrder() {
+            shuffleOrder = [...Array(playlist.length).keys()];
+            for (let i = shuffleOrder.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffleOrder[i], shuffleOrder[j]] = [shuffleOrder[j], shuffleOrder[i]];
+            }
+        }
+
+        function loadTrack(index) {
+            if (shuffle) {
+                if (shuffleOrder.length === 0) createShuffleOrder();
+                audio.src = playlist[shuffleOrder[index % shuffleOrder.length]];
+            } else {
+                audio.src = playlist[index % playlist.length];
+            }
+        }
+
+        function nextTrack() {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            loadTrack(currentTrackIndex);
+            if (playing) {
+                audio.play().catch(() => {});
+            }
+        }
+
+        async function updateCurrentTime() {
+            try {
+                const response = await fetch('/tezzy/timezone');
+                const data = await response.json();
+                const timezone = data.timezone || 'America/New_York';
+                
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('en-US', {
+                    timeZone: timezone,
+                    hour12: true,
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+                
+                const abbr = timezone.includes('New_York') ? 'ET' : 
+                           timezone.includes('Chicago') ? 'CT' :
+                           timezone.includes('Denver') ? 'MT' :
+                           timezone.includes('Los_Angeles') ? 'PT' :
+                           timezone.includes('London') ? 'GMT' :
+                           timezone.includes('Paris') ? 'CET' :
+                           timezone.includes('Tokyo') ? 'JST' :
+                           timezone.includes('Shanghai') ? 'CST' :
+                           timezone.includes('Sydney') ? 'AEST' : 'UTC';
+                
+                currentTime.textContent = `${abbr} ${timeString}`;
+            } catch (error) {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('en-US', {
+                    timeZone: 'America/Chicago',
+                    hour12: false,
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+                currentTime.textContent = `ET ${timeString}`;
+            }
+        }
+
+        async function fetchStatus() {
+            try {
+                const res = await fetch(`https://api.lanyard.rest/v1/users/${USER_ID}`);
+                return res.ok ? (await res.json()).data : null;
+            } catch {
+                return null;
+            }
+        }
+
+        function updateStatus(data) {
+    if (!data) {
+        showOffline();
+        return;
+    }
+
+    const discordStatus = data.discord_status || 'offline';
+    status.className = `status ${discordStatus}`;
+
+    if (discordStatus === 'offline') {
+        showOffline();
+        return;
+    }
+
+            const activity = data.activities?.find(a => 
+                a.type !== 4 && a.name && a.name !== 'Custom Status'
+            );
+
+            if (activity) {
+                showActivity(activity);
+            } else if (data.spotify) {
+                showSpotify(data.spotify);
+            } else {
+                showOnline();
+            }
+        }
+
+        function showActivity(activity) {
+            activityDetails.textContent = `playing ${activity.name}`;
+            
+            if (activity.details) {
+                activityState.textContent = activity.details;
+                activityState.style.display = 'block';
+            } else {
+                activityState.style.display = 'none';
+            }
+
+            if (activity.timestamps?.start) {
+                startTime = activity.timestamps.start;
+                updateTimer();
+            } else {
+                activityTime.style.display = 'none';
+            }
+
+            setIcon(activity.name);
+        }
+
+        function showSpotify(spotify) {
+            activityDetails.textContent = 'listening to spotify';
+            activityState.textContent = `${spotify.song} by ${spotify.artist}`;
+            activityState.style.display = 'block';
+
+            if (spotify.timestamps?.start) {
+                startTime = spotify.timestamps.start;
+                updateTimer();
+            }
+
+            activityIcon.className = 'activity-icon spotify';
+            activityIcon.innerHTML = '<i class="fab fa-spotify"></i>';
+        }
+
+        function showOnline() {
+            activityDetails.textContent = 'online';
+            activityState.style.display = 'none';
+            activityTime.style.display = 'none';
+            activityIcon.className = 'activity-icon';
+            activityIcon.innerHTML = '<i class="fab fa-discord"></i>';
+            startTime = null;
+        }
+
+        function showOffline() {
+    activityDetails.textContent = 'offline';
+    activityState.style.display = 'none';
+    activityTime.style.display = 'none';
+    activityIcon.className = 'activity-icon';
+    activityIcon.innerHTML = '<i class="fas fa-moon"></i>';
+    status.className = 'status offline'; 
+    startTime = null;
+}
+
+        function setIcon(name) {
+            const n = name.toLowerCase();
+            if (n.includes('code')) {
+                activityIcon.className = 'activity-icon vscode';
+                activityIcon.innerHTML = '<i class="fas fa-code"></i>';
+            } else if (n.includes('spotify')) {
+                activityIcon.className = 'activity-icon spotify';
+                activityIcon.innerHTML = '<i class="fab fa-spotify"></i>';
+            } else {
+                activityIcon.className = 'activity-icon';
+                activityIcon.innerHTML = '<i class="fas fa-gamepad"></i>';
+            }
+        }
+
+        function updateTimer() {
+            if (!startTime) return;
+            const elapsed = Date.now() - startTime;
+            const minutes = Math.floor(elapsed / 60000);
+            const seconds = Math.floor((elapsed % 60000) / 1000);
+            activityTime.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            activityTime.style.display = 'block';
+        }
+
+        async function type(el, text, speed = 60) {
+            el.classList.add('typing');
+            for (let i = 0; i <= text.length; i++) {
+                el.textContent = text.slice(0, i);
+                await new Promise(r => setTimeout(r, speed));
+            }
+            el.classList.remove('typing');
+        }
+
+        function initTilt() {
+            let isHovering = false;
+            let mouseX = 0;
+            let mouseY = 0;
+            let currentRotateX = 0;
+            let currentRotateY = 0;
+            
+            function updateTilt() {
+                if (!isHovering) {
+                    currentRotateX += (0 - currentRotateX) * 0.1;
+                    currentRotateY += (0 - currentRotateY) * 0.1;
+                    
+                    if (Math.abs(currentRotateX) < 0.01 && Math.abs(currentRotateY) < 0.01) {
+                        container.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0)';
+                        container.style.boxShadow = `
+                            0 8px 32px rgba(0, 0, 0, 0.3),
+                            0 0 0 1px rgba(255, 255, 255, 0.05)
+                        `;
+                        container.style.borderColor = '#30363d';
+                        return;
+                    }
+                }
+                
+                container.style.transform = `
+                    perspective(1000px) 
+                    rotateX(${currentRotateX}deg) 
+                    rotateY(${currentRotateY}deg) 
+                    translateZ(${isHovering ? 20 : 0}px)
+                `;
+                
+                requestAnimationFrame(updateTilt);
+            }
+
+            container.addEventListener('mouseenter', () => {
+                isHovering = true;
+                container.style.borderColor = 'rgba(139, 92, 246, 0.3)';
+                updateTilt();
+            });
+
+            container.addEventListener('mousemove', e => {
+                if (!isHovering) return;
+                
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                mouseX = e.clientX - centerX;
+                mouseY = e.clientY - centerY;
+                
+                const maxTilt = 12;
+                const targetRotateX = -(mouseY / (rect.height / 2)) * maxTilt;
+                const targetRotateY = (mouseX / (rect.width / 2)) * maxTilt;
+                
+                currentRotateX += (targetRotateX - currentRotateX) * 0.15;
+                currentRotateY += (targetRotateY - currentRotateY) * 0.15;
+                
+                const shadowIntensity = Math.sqrt(mouseX * mouseX + mouseY * mouseY) / 100;
+                const shadowX = mouseX / 10;
+                const shadowY = mouseY / 10;
+                
+                container.style.boxShadow = `
+                    ${shadowX}px ${20 + shadowY}px ${40 + shadowIntensity * 20}px rgba(0, 0, 0, ${0.4 + shadowIntensity * 0.2}),
+                    0 0 0 1px rgba(139, 92, 246, ${0.1 + shadowIntensity * 0.1}),
+                    0 0 ${20 + shadowIntensity * 30}px rgba(139, 92, 246, ${shadowIntensity * 0.15})
+                `;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                isHovering = false;
+            });
+        }
+
+        function toggleAudio() {
+            if (playing) {
+                audio.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                audio.play().catch(() => {});
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            playing = !playing;
+        }
+
+        logo.addEventListener('click', enterSite);
+        splash.addEventListener('click', enterSite);
+
+        async function enterSite() {
+            splash.classList.add('hide');
+            incrementViews();
+            
+            setTimeout(async () => {
+                main.classList.add('show');
+                
+                loadTrack(0);
+                audio.volume = 0.3;
+                
+                setTimeout(() => {
+                    audio.play().then(() => {
+                        playing = true;
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    }).catch(() => {});
+                }, 100);
+                
+                await new Promise(r => setTimeout(r, 200));
+                await type(username, 'Tezzy', 80);
+                await new Promise(r => setTimeout(r, 100));
+                await type(tagline, 'Developer', 50);
+                
+                const data = await fetchStatus();
+                updateStatus(data);
+                
+                setInterval(async () => {
+                    const data = await fetchStatus();
+                    updateStatus(data);
+                }, 15000);
+                
+                setInterval(() => {
+                    if (startTime) updateTimer();
+                }, 1000);
+                
+                updateCurrentTime();
+                setInterval(updateCurrentTime, 1000);
+                
+                initTilt();
+            }, 300);
+        }
+
+        playBtn.addEventListener('click', toggleAudio);
+        volumeSlider.addEventListener('input', () => {
+            audio.volume = volumeSlider.value;
+        });
+
+        audio.addEventListener('ended', nextTrack);
+
+        getViews();
+    </script>
+<script>
+(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9766604a0e774ff9',t:'MTc1NjQxMTAzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+</script>
+<script>
+(function() {
+    const e = () => {
+        const w = window.outerWidth - window.innerWidth > 160;
+        const h = window.outerHeight - window.innerHeight > 160;
+        if (w || h) blk();
+    };
+    
+    const blk = () => {
+        document.body.innerHTML = '<div style="position:fixed;inset:0;background:#0d1117;display:flex;align-items:center;justify-content:center;font-family:monospace;color:#e6edf3;font-size:2rem;z-index:99999">403</div>';
+        document.addEventListener('keydown', ev => ev.preventDefault(), true);
+        document.addEventListener('contextmenu', ev => ev.preventDefault(), true);
+    };
+    
+    document.addEventListener('contextmenu', ev => ev.preventDefault());
+    
+    document.addEventListener('keydown', ev => {
+        if (ev.keyCode === 123 || 
+            (ev.ctrlKey && ev.shiftKey && ev.keyCode === 73) ||
+            (ev.ctrlKey && ev.shiftKey && ev.keyCode === 74) ||
+            (ev.ctrlKey && ev.keyCode === 85) ||
+            (ev.ctrlKey && ev.shiftKey && ev.keyCode === 67)) {
+            ev.preventDefault();
+            return false;
+        }
+    });
+    
+    setInterval(e, 500);
+    setInterval(() => {(function(){return false;})['constructor']('debugger')()}, 50);
+    
+    if (window.top !== window.self) blk();
+})();
+</script>
+</body>
+</html>
