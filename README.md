@@ -6,7 +6,7 @@
 > - Founder of Recon | .gg/p67BF77yr5  || Not up may bring back up in the future
 > - Founder of Revive | .gg/p2aPJKEYNd
 > - I mod custom skins / emotes for 9.10 and 14.30
-> - Backend and Gameserver Dev
+> - Launcher, Backend, and Gameserver Dev
 -  
   <img src="https://img.shields.io/badge/-C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++ Logo" height="24" /> 
   <img src="https://img.shields.io/badge/-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C# Logo" height="24" />
